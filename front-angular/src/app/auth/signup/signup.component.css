@@ -1,0 +1,55 @@
+body{padding-top: 0 !important;}
+.top-bar{display: none !important;}
+#main-wrapper{display: inline-block;width: 100%;vertical-align: top;overflow: inherit;}
+.login-register{background-image:url('../../../assets/images/bg_8.jpg');height: 100vh;background-size: cover;background-repeat: no-repeat;background-position: center center;}
+.btn-rounded {border-radius: 60px;padding: 7px 18px}
+.login-box.card {box-shadow: 0px 5px 11px 8px #8a00009e;}
+.card {margin-bottom: 20px;}
+.login-box {max-width: 400px;margin: 0 auto;}
+ .form-group {margin-bottom: 25px;}
+.align-items-center {align-items: center!important;}
+.d-flex {display: flex!important;}
+.custom-control-label {position: relative;vertical-align: top;font-size: 14px;}
+.text-muted {color: #6c757d!important;}
+.forget-pass{font-size: 14px;}
+
+#wrapper{margin-top: -200px;}
+.m-b-20{margin-bottom: 20px;}
+
+.btn-block {display: block;}
+.btn {color: #212529;text-align: center;vertical-align: middle;user-select: none;background-color: transparent;border: 1px solid transparent;padding: .375rem .75rem;font-size: .875rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;}
+.btn-primary {background-color: #8a0000;border-color: #8a0000;}
+.btn-rounded.btn-lg {padding: .75rem 1.5rem;}
+.btn-group-lg>.btn, .btn-lg {padding: .5rem 1rem;font-size: 1.09375rem;line-height: 1.5;border-radius: .3rem;}
+.btn-rounded {border-radius: 60px;padding: 7px 18px;}
+.btn-primary:hover {background-color: #8a0000;border-color: #8a0000;}
+.btn-primary, .btn-primary:hover, .btn-warning, .btn-warning:hover {color: #fff;}
+.login-box-inner{width: 400px;padding: 15px;}
+
+.input-field{border: 0;border-bottom: 1px solid #e9ecef; }
+.input-field:focus {outline: none;border-bottom: 1px solid #ec7023;}
+
+.full-box {width: 100%;padding: 0px;}
+.input-box {padding: 0 10px;margin-bottom: 23px;position: relative;}
+.toggle-button {position: relative;top: 50%;width: 54px;height: 24px;display: inline-block;overflow: hidden;border-radius: 100px;border: 2px solid #d3d3d3;vertical-align: middle;}
+.toggle-button .checkbox {position: relative;width: 100%;height: 100%;padding: 0;margin: 0;opacity: 0;cursor: pointer;z-index: 3;}
+.full-box input {max-width: 100%;width: 100%;line-height: 2.1;font-size: 15px;}
+.toggle-button .knobs {z-index: 2;}
+.toggle-button .knobs, .toggle-button .layer {position: absolute;top: 0;right: 0;bottom: 0;left: 0;}
+.toggle-button .knobs:before {content: ' ';position: absolute;top: 50%;left: 3px;width: 16px;height: 16px;color: #fff;font-size: 10px;font-weight: bold;text-align: center;line-height: 1;padding: 0;background-color: #000;border-radius: 50%;transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);transform: translate(0px, -50%);}
+.toggle-button .layer {width: 100%;transition: 0.3s ease all;z-index: 1;border-radius: 100px;background-color: #fff;}
+.toggle-button + span {margin-left: 10px;font-size: 13px;font-weight: 600;color: #212529;}
+
+.custom-control-input:checked~.custom-control-label::before {color: #fff;border-color: #8a0000;background-color: #8a0000;}
+.toggle-button .checkbox:checked + .knobs:before {content: ' ';left: 32px;background-color: #8b0000;}
+
+
+@media screen and (max-width: 767px) {
+    /* body {padding-top: 0;}
+    #wrapper{margin: 0;} */
+
+ }
+
+@media screen and (max-width: 550px) { 
+    .login-box-inner{width: 100%;} 
+}

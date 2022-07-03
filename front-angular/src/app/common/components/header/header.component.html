@@ -1,0 +1,20 @@
+<header>
+    <div class="top-bar flex-space-box">
+        <div class="menu-button large-tab-view" title="Menu" >
+            <span></span>
+        </div>
+        <div class="logo">
+           <h2> <a routerLink="/">Amit's Blogs</a></h2>
+        </div>
+        <div class="menu-item user-detail">
+            <a (click)="toggleUserMenu(isUserMenuShow)" class="cursor-pointer">
+                <img  src="./assets/images/icon-profile-user.png" alt=""> &nbsp;
+                <b>{{ this.commonService.getUserName() }}</b>
+                <svg class="menu-icon-drop" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.72 305.36"><title>Vector Smart Object1</title><path d="M256,392.71a49.2,49.2,0,0,1-35-14.49L14.65,171.89a49.53,49.53,0,0,1,70.05-70L256,273.15,427.3,101.84a49.53,49.53,0,1,1,70.05,70L291,378.22A49.22,49.22,0,0,1,256,392.71Z" transform="translate(-0.14 -87.35)"></path></svg>
+            </a>
+            <div class="user-sub-menu-box" *ngIf="isUserMenuShow">
+                <div class="sub-menu-item"><a (click)="logout();isUserMenuShow = 0">Logout</a></div>
+            </div>
+        </div>
+    </div>
+</header>

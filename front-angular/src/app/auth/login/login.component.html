@@ -1,0 +1,132 @@
+<section id="wrapper" class="no-padding">
+  <div class="login-register flex-space-box justify-content-center">
+    <div class="login-info">
+      <!-- Logo -->
+      <div class="text-center" style="margin-bottom: 30px;">
+        <h2>Amit's Blogs</h2>
+      </div>
+      <div class="login-box card">
+        <div class="login-box-inner ">
+          <div id="error-message" style="display:none" class="alert alert-danger" data-dismiss="alert"
+            aria-label="close">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          </div>
+          <h3 class="text-center m-b-20"> Sign In </h3>
+          <form [ngClass]="'form'" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-box login-box">
+              <div class="full-box input-box">
+                <input type="text" formControlName="email" class="input-field" placeholder="Email Address" required
+                  appCheckInputBlank>
+                <div *ngIf="isSubmitted && f.email.errors" class="errors">
+                  <p class="text-danger" *ngIf="f.email.errors.required">Please enter email</p>
+                  <p class="text-danger" *ngIf="f.email.errors.validEmail">Please enter valid email</p>
+                </div>
+              </div>
+              <div class="full-box input-box">
+                <input type="password" [type]="isPasswordTextFieldType ? 'text' : 'password'" maxlength="16"
+                  class="input-field" formControlName="password"
+                  [ngClass]="{'error-border': isSubmitted && f.password.errors }" placeholder="Password" required
+                  appCheckInputBlank>
+                <div *ngIf="isSubmitted && f.password.errors" class="errors">
+                  <p class="text-danger" *ngIf="f.password.errors.required">Please enter password</p>
+                  <p class="text-danger" *ngIf="f.password.errors.maxlength != null">Password length must be 8-16
+                    characters</p>
+                  <p class="text-danger" *ngIf="f.password.errors.minlength != null">Password length must be 8-16
+                    characters</p>
+                </div>
+                <a class="view-password-btn" (click)="togglePasswordFieldType()" ion-button item-right>
+                  <svg width="25" *ngIf="!this.isPasswordTextFieldType" vxmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+                    viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                    <g>
+                      <g>
+                        <path
+                          d="M508.177,245.995C503.607,240.897,393.682,121,256,121S8.394,240.897,3.823,245.995c-5.098,5.698-5.098,14.312,0,20.01    C8.394,271.103,118.32,391,256,391s247.606-119.897,252.177-124.995C513.274,260.307,513.274,251.693,508.177,245.995z M256,361    c-57.891,0-105-47.109-105-105s47.109-105,105-105s105,47.109,105,105S313.891,361,256,361z" />
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <path
+                          d="M271,226c0-15.09,7.491-28.365,18.887-36.53C279.661,184.235,268.255,181,256,181c-41.353,0-75,33.647-75,75    c0,41.353,33.647,75,75,75c37.024,0,67.668-27.034,73.722-62.358C299.516,278.367,271,255.522,271,226z" />
+                      </g>
+                    </g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                  </svg>
+                  <svg width="25" *ngIf="this.isPasswordTextFieldType" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+                    viewBox="0 0 98.48 98.481" style="enable-background:new 0 0 98.48 98.481;" xml:space="preserve">
+                    <g>
+                      <g>
+                        <path d="M69.322,44.716L49.715,64.323C60.438,64.072,69.071,55.438,69.322,44.716z" />
+                        <path
+                          d="M97.204,45.789c-0.449-0.529-6.245-7.23-15.402-13.554l-6.2,6.2c5.99,3.954,10.559,8.275,13.011,10.806    C83.235,54.795,67.7,68.969,49.241,68.969c-1.334,0-2.651-0.082-3.952-0.222l-7.439,7.438c3.639,0.91,7.449,1.451,11.391,1.451    c26.426,0,47.098-23.927,47.964-24.946C98.906,50.692,98.906,47.79,97.204,45.789z" />
+                        <path
+                          d="M90.651,15.901c0-0.266-0.104-0.52-0.293-0.707l-7.071-7.07c-0.391-0.391-1.022-0.391-1.414,0L66.045,23.952    c-5.202-1.893-10.855-3.108-16.804-3.108c-26.427,0-47.098,23.926-47.965,24.946c-1.701,2-1.701,4.902,0.001,6.903    c0.517,0.606,8.083,9.354,19.707,16.319l-12.86,12.86c-0.188,0.188-0.293,0.441-0.293,0.707c0,0.267,0.105,0.521,0.293,0.707    l7.071,7.07c0.195,0.194,0.451,0.293,0.707,0.293c0.256,0,0.512-0.099,0.707-0.293l73.75-73.75    C90.546,16.421,90.651,16.167,90.651,15.901z M9.869,49.241C13.5,45.49,21.767,37.812,32.436,33.22    c-2.081,3.166-3.301,6.949-3.301,11.021c0,4.665,1.601,8.945,4.27,12.352l-6.124,6.123C19.129,58.196,12.89,52.361,9.869,49.241z" />
+                      </g>
+                    </g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                  </svg>
+                </a>
+              </div>
+
+              <div class="full-box input-box">
+                <div class="d-flex no-block align-items-center">
+                  <div class="toggle-button">
+                    <input type="checkbox" [checked]="rememberMe" (change)="changeRememberMe($event)" class="checkbox">
+                    <div class="knobs"></div>
+                    <div class="layer"></div>
+                  </div>
+                  <span>Stay signed in </span>
+                </div>
+              </div>
+
+              <div class="action-bnt full-box input-box">
+                <button type="submit" class="btn  btn-block btn-lg btn-primary btn-rounded btnLogin  "
+                  [disabled]="isLoading">Login in</button>
+              </div>
+
+
+              <div class="full-box input-box">
+                <div class="d-flex no-block align-items-center">
+
+                  <div class="ml-auto forget-pass">
+                    Don’t have an account? <a routerLink="/auth/signup" class="text-muted">&nbsp; Sign Up</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Login box stop -->
+  </div>
+</section>

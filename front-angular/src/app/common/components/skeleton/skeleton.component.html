@@ -1,0 +1,21 @@
+<div class="skeleton-main">
+    <div class="row">
+        <div class="col-md-6">
+            <div *ngFor="let ghostArray of ghostArray">
+                <!-- <span class="ghostBox"></span> -->
+                <span class="ghostLine mb-4"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="d-flex align-items-center mb-3" *ngFor="let ghostArray of ghostArray">
+                <span class="ghostBox"></span>
+                <span class="ghostLine"></span>
+            </div>
+        </div>
+        <!-- <div class="col-md-6" *ngFor="let ghostArray of ghostArrayBig">
+            <div class="d-flex align-items-center mb-3">
+                <span class="ghostBoxBig"></span>
+            </div>
+        </div> -->
+    </div>
+</div>

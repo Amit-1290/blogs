@@ -1,0 +1,3 @@
+<app-header *ngIf="this.commonService.isUserLogin() && this.commonService.headerDisabled == 0 ? true : false "></app-header>
+<router-outlet></router-outlet>
+<app-footer *ngIf="this.commonService.isUserLogin()"></app-footer>

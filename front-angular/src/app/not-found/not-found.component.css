@@ -1,0 +1,6 @@
+.not-found-box > *{margin-bottom: 2.5vw;}
+.not-found-box img{max-width: 70vw; max-height: 25vw;}
+.light-content {color: #ffffff !important;}
+.btn {background: #8b0000;border: 0px;font-size: 22px;padding: 10px 30px;}
+.btn.nm-btn {min-width: 316px;padding: 10px;}
+.title {font-family: 'OpenSans-Bold';font-size: 48px;}

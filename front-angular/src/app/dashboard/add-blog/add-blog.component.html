@@ -1,0 +1,48 @@
+<div class="profile-detail middle-box">
+    <div class="container">
+        <div class="profile-container">
+            <div class="flex-space-box mb-4">
+                <h2 class="main-page-title">
+                    <b> Add Blog</b>
+                </h2>
+                <a class="button-blue-bttn m-0" routerLink="/">Go to Back</a>
+            </div>
+            <div class="middle-white-box ">
+                <form [ngClass]="profile-form" [formGroup]="addBlogForm" (ngSubmit)="onSubmit()">
+
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Select Category</label>
+                        <ng-multiselect-dropdown name="blogCategories1" [placeholder]="'Select Blog Category'"
+                            [data]="dropdownList" formControlName="blogCategories" [settings]="dropdownSettings"
+                            (onSelect)="onItemSelect($event)" >
+                        </ng-multiselect-dropdown>
+
+                        <div *ngIf="isSubmitted && f.blogCategories.errors" class="errors">
+                            <p class="text-danger" *ngIf="f.blogCategories.required">Please select categories</p>
+                          </div>
+                    </div> 
+
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" formControlName="title" class="form-control" id="title" maxlength="100"
+                            placeholder="title" required appCheckInputBlank>
+                        <div *ngIf="isSubmitted && f.title.errors" class="errors">
+                            <p class="text-danger" *ngIf="f.title.required">Please enter title</p>
+                        </div>  
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <ckeditor [editor]="descriptionEditor" [config]="config" formControlName="description" required ></ckeditor>
+                        <div *ngIf="isSubmitted && f.description.errors" class="errors">
+                            <p class="text-danger" *ngIf="f.description.required">Please enter description</p>
+                        </div>  
+                    </div>
+
+                    <div class="formBtn">
+                        <button type="submit" class="button-blue-bttn">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

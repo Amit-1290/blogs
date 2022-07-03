@@ -1,0 +1,9 @@
+<div class="bradcrumb" *ngIf="ghostBreadcrumb == 0">
+    <div class="brad-item" *ngFor="let breadCrumbInfo of breadCrumbLinks;let last=last;" [ngClass]="last ? 'active' : '' ">
+        <a *ngIf="!last" [routerLink]="breadCrumbInfo.link" >{{ breadCrumbInfo.name }}</a>
+        <a *ngIf="last" >{{ breadCrumbInfo.name }}</a>
+    </div>
+</div>
+<div class="bradcrumb" *ngIf="ghostBreadcrumb == 1">
+    <span class="bradGhostLine"></span>
+</div>
